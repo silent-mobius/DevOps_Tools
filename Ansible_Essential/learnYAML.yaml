@@ -1,0 +1,43 @@
+--- # need to start every yaml file with 3 dashes
+#yaml - TAML ain't Markup Language
+
+
+#defining a key: value  variable--> after ":" needs to be a space
+name: "shibotaru tanaka" #defining string
+occupation: 'yakuza' # defining string
+age: 25  #can define integer
+bagrut: 100.20  #can define float
+favorite_number: 69
+male: true   #can define boolians
+birthday:  1986-02-29 # can define date according ISO 8601
+
+#can also define objects:
+person:
+  name: "Schapelle Alex" #defining string
+  occupation: 'DevOps' # defining string
+  age: 32  #can define integer
+  bagrut: 94.20  #can define float
+  favorite_number: 100
+  male: true   #can define boolians
+  birthday:  1986-03-01 # can define date according ISO 8601
+  hobbies:
+    - salsa
+    - cooking
+    - daydreaming
+  other_hoobie_definition: ['salsa', 'cooking', 'daydreaming']
+  #complex objects:
+  friends:
+    - name: 'Ben'
+      age: 31
+    - {name:'Gia',age:39}
+  #you can depricate new line by using >
+  descripting: > #this will save data as one line
+    blkablalbalbalbalbalbalbalalbalbal
+    blkablalbalbalbalbalbalbalalbalbalblalba
+    lbalbalbalbalbalb
+    blalbalbalbalbalbalbalbalbalbal
+  #you can preserve the new lines by using |
+  signature: |
+    Alex M. Schapelle
+    Vaiolabs Inc.
+    email - Alex@vaiolabs.com
