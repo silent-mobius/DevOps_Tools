@@ -1,0 +1,15 @@
+---
+- hosts: web
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: install web components
+	  yum:
+        name: httpd
+        state: latest
+  handlers:
+	- name: restarting the web service
+      service: name=apache2 state=restarted
+			
+		
+

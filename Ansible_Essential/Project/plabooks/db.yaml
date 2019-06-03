@@ -1,0 +1,10 @@
+---
+- hosts: db
+  becomes: yes
+  become_method: sudo
+  tasks: 
+    - name: install web components
+	  apt:
+        name: 
+        state: latest
+	
