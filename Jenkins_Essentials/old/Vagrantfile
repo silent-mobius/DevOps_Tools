@@ -1,0 +1,21 @@
+
+Vagrant.configure("2") do |config|
+  config.vm.define "jenkins" do |jk|
+    jk.vm.box='ebracho/jenkins'
+    jk.vm.hostname='jenkins'
+    jk.vm.network "private_network", ip: '10.0.10.100'
+    jk.vm.network "forwarded_port", guest:8080, host:80
+  end
+    config.vm.define "st" do |st|
+      st.vm.box='centos/7'
+      st.vm.hostname='staging'
+      st.vm.network "private_network", ip: '10.0.10.101'
+      st.vm.network "forwarded_port", guest:8080, host:80
+    end
+    config.vm.define "prod" do |prod|
+      prod.vm.box='centos/7'
+      prod.vm.hostname='production'
+      prod.vm.network "private_network", ip: '10.0.10.102'
+      prod.vm.network "forwarded_port", guest:8080, host:80
+    end
+end
